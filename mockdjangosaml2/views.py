@@ -16,7 +16,7 @@ from djangosaml2.utils import get_custom_setting
 
 from mockdjangosaml2.settings import MOCK_SAML2_USERS
 from djangosaml2.conf import get_config
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 logger = logging.getLogger('djangosaml2')
 
 
