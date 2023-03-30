@@ -5,7 +5,7 @@ from django.conf import settings
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.views import logout as django_logout
+from django.contrib.auth.views import LogoutView
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -133,4 +133,4 @@ def logout(request):
         next_page = settings.LOGOUT_REDIRECT_URL
     logger.debug('Performing django_logout with a next_page of %s'
                  % next_page)
-    return django_logout(request, next_page=next_page)
+    return LogoutView.as_view()(request, next_page=next_page)
