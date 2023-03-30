@@ -50,7 +50,7 @@ def login(request, config_loader_path=None,
         logger.warning('The next parameter exists but is empty')
         came_from = settings.LOGIN_REDIRECT_URL
 
-    if not request.user.is_anonymous():
+    if not request.user.is_anonymous:
         try:
             redirect_authenticated_user = \
                         settings.SAML_IGNORE_AUTHENTICATED_USERS_ON_LOGIN
